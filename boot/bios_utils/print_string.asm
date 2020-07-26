@@ -16,4 +16,17 @@ loop:
 
 done_print:
   popa		; recover all registers
+  ret
+
+; print a newline
+print_newline:
+  pusha
+
+  mov al, 0x0a
+  mov ah, 0x0e
+  int 0x10
+  mov al, 0x0d
+  int 0x10
+
+  popa
   ret	
