@@ -35,7 +35,7 @@ load_kernel:
   call print_newline
 
   mov bx, KERNEL_OFFSET		; Setup the parameters for our disk_load 
-  mov dh, 15			; routine so we load the first 15 sectors
+  mov dh, 4			; routine so we load the first 4 sectors
   mov dl, [BOOT_DRIVE]		; (excluding the boot sector) from the
   call disk_load		; boot disk (i.e. our kernel code)
 				; to address KERNEL_OFFSET
